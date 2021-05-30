@@ -776,4 +776,9 @@ min-width: fit-content;
 .repos-container .show-data .repo-box span {
   background-color: #ffc700;
   font-weight: bold;
+  color: red;
+    font-size: 1rem;
+}
+.textDate{
+  color: black !important;
 }

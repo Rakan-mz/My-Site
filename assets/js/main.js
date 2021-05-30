@@ -158,9 +158,10 @@ function getRepos() {
         mainDiv.appendChild(theUrl);
 
         // Create Stars Count Span
-        let starsSpan = document.createElement("span");
-        starsSpan.className = 'col-xl-3 col-lg-3 col-md-3 col-xs-6 mb-2 mb-md-0';
+        let one = document.createElement("span");
+        one.className = 'col-xl-3 col-lg-3 col-md-3 col-xs-6 mb-2 mb-md-0 ';
 
+        let two = document.createElement("text");
 
         // Create The date  Text
         let u = repo.updated_at;
@@ -171,16 +172,22 @@ function getRepos() {
         const date2 = d.getMonth();
         const date3 = d.getFullYear();
         let date = date1+ "-" +months[date2]+ "-" +date3;
-        let starsText = document.createTextNode(`Last Update: ${date}`);
+        let starsText = document.createTextNode(`Last Update: `);
+        let starsText2 = document.createTextNode(`${date}`);
+
+        var xi =   document.getSelection(starsText2);
+        two.className = "textDate";
 
         dates.push(date);
         projects.push(repo.name);
 
         // Add Stars Count Text To Stars Span
-        starsSpan.appendChild(starsText);
+        one.appendChild(starsText);
+        two.appendChild(starsText2);
 
         // Append Stars Count Span To Main Div
-        mainDiv.appendChild(starsSpan);
+        mainDiv.appendChild(one);
+        one.appendChild(two);
 
         // Add Class On Main Div
         mainDiv.className = 'repo-box row';
